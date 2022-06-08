@@ -20,13 +20,13 @@ jobs:
 
       - id: cache-path
         run: | 
-          mvn help:evaluate -Dexpression=settings.localRepository | grep "m2/repository"
+          echo "::set-output name=dir::$(mvn help:evaluate -Dexpression=settings.localRepository | grep 'm2/repository')"
       - name: Cache maven packages
         id: cache
         uses: actions/cache@v3
         with:
           path: |
-            /root/.m2/repository
+            ${{ steps.cache-path.outputs.dir }}
           key: test_43
 
       - if: steps.cache.outputs.cache-hit != 'true'
