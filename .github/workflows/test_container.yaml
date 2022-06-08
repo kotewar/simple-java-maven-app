@@ -24,10 +24,11 @@ jobs:
         with:
           path: |
             ~/.m2/repository
-          key: test_1
+          key: test_2
 
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
         run: |
           mvn install
           pwd
+          ls -alrth ~/
