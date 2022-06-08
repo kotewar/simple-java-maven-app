@@ -29,7 +29,6 @@ jobs:
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
         run: |
-          echo $M2
-          echo $M2_HOME
+          printenv
           mvn install
           pwd
