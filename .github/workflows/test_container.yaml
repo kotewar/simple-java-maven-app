@@ -31,4 +31,3 @@ jobs:
         run: |
           mvn install
           pwd
-          ls -lrth ~/.m2/repository
