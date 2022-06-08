@@ -20,7 +20,7 @@ jobs:
 
       - id: cache-path
         run: | 
-          mvn help:evaluate -Dexpression=settings.localRepository
+          mvn help:evaluate -Dexpression=settings.localRepository | grep "m2/repository"
       - name: Cache maven packages
         id: cache
         uses: actions/cache@v3
