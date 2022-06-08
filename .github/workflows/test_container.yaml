@@ -35,3 +35,5 @@ jobs:
           ls
           echo "home path contents"
           ls -a /github/home/
+          echo "mvn help:evaluate -Dexpression=settings.localRepository"
+          mvn help:evaluate -Dexpression=settings.localRepository
