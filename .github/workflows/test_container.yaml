@@ -27,7 +27,7 @@ jobs:
         with:
           path: |
             ${{ steps.cache-path.outputs.dir }}
-          key: test_43
+          key: test_100
 
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
