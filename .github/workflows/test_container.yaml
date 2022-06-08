@@ -18,13 +18,16 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
+      - id: cache-path
+        run: | 
+          mvn help:evaluate -Dexpression=settings.localRepository
       - name: Cache maven packages
         id: cache
         uses: actions/cache@v3
         with:
           path: |
             /root/.m2/repository
-          key: test_3
+          key: test_43
 
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
