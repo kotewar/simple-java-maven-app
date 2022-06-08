@@ -23,8 +23,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ~/.m2/repository
-          key: test_2
+            /root/.m2/repository
+          key: test_3
 
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
