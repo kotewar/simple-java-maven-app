@@ -1,6 +1,7 @@
 name: Testing container bug
 on:
   workflow_dispatch:
+  push:
 jobs:
   unit-tests:
     
