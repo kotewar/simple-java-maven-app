@@ -27,8 +27,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.cache-path.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-java-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-java-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
 
       - if: steps.cache.outputs.cache-hit != 'true'
         name: Run liquibase update
